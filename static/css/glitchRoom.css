@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.label1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.label2{
+    width: 40%;
+}
+
+
+         /* Стили для контейнера слайдера */
+         .slider-container {
+            width: 45%;
+            overflow: hidden;
+            position: relative;
+          }
+      
+          /* Стили для списка изображений */
+          .slider-list {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+          }
+      
+          /* Стили для каждого слайда */
+          .slider-item {
+            flex: 0 0 100%;
+            height: 100%;
+          }
+      
+          /* Стили для изображений внутри слайдов */
+          .slider-item img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .randGif{
+            z-index: -100;
+            width: 100px;
+            height: auto;
+            position:absolute;
+        }

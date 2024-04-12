@@ -1,0 +1,860 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fancybox-slide--html {
+  padding: 0;
+}
+
+.fancybox-active {
+  height: 100%;
+}
+.modal-content {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  z-index: 9999;
+}
+
+.fancybox-active {
+  height: 100%;
+}
+
+.modal {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+
+
+
+ul {
+  width: 50%;
+  margin-bottom: 6px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  list-style-type: none;
+  height: 100%;
+}
+
+li {
+  cursor: url('images/cursor.png'), auto;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Sinistre-S†Caroline";
+}
+
+
+back1 {
+  position: absolute;
+  background: url("../images/back1.webp") no-repeat;
+  background-position: center;
+  background-size: 90%;
+  transition: top 800ms ease-in-out;
+
+  width: 100%;
+  height: 100vh;
+  z-index: -999999;
+  background-size: 80%;
+}
+
+back2 {
+  position: absolute;
+  background: url("../images/back2.webp") no-repeat;
+  background-position: center;
+  background-size: 90%;
+  transition: top 800ms ease-in-out;
+
+  width: 100%;
+  height: 100vh;
+  z-index: -999999;
+
+  background-size: 90%;
+}
+
+back3 {
+  position: absolute;
+  background: url("../images/back3.webp") no-repeat;
+  background-position: center;
+  background-size: 90%;
+  transition: top 800ms ease-in-out;
+
+  width: 100%;
+  height: 100vh;
+  z-index: -999999;
+
+  background-size: 90%;
+}
+
+
+
+
+
+
+
+
+.createdby {
+  font-family: 'Comfortaa', cursive;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #555555;
+
+}
+
+.createdby a {
+  color: #555555;
+}
+
+.createdby a :after {
+  display: block;
+  /*превращаем его в блочный элемент*/
+  right: 0;
+  /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  content: "";
+  /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 2px;
+  /*задаём высоту линии*/
+  width: 0%;
+  /*задаём начальную ширину элемента (линии)*/
+  background-color: #555555;
+  /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out;
+  /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+}
+
+.createdby a:hover {
+  color: #555555;
+}
+
+a {
+  cursor: url('../images/cursor_pointer.png'), pointer;
+  text-decoration: none;
+  /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+  display: inline-block;
+  /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный*/
+  line-height: 1;
+  /*Задаём высоту строки (можно в пикселях)*/
+  color: white;
+  /*Задаём цвет ссылки*/
+}
+
+.TEXT {
+  max-width: 1000px;
+  line-height: 1.6;
+  margin:  0 auto;
+  text-align: center;
+  font-size: 120%;
+  font-family: "{{font}}";
+}
+
+
+
+
+
+
+
+
+
+
+
+.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+}
+
+
+.createdby {
+  font-family: 'Comfortaa', cursive;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #555555;
+
+}
+
+.createdby a {
+  color: #555555;
+}
+
+
+
+
+
+
+
+
+
+a {
+  cursor: url('images/cursor_pointer.png'), pointer;
+  text-decoration: none;
+  /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+  display: inline-block;
+  /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный*/
+  line-height: 1;
+  /*Задаём высоту строки (можно в пикселях)*/
+  color: white;
+  /*Задаём цвет ссылки*/
+}
+
+a:after {
+  display: block;
+  /*превращаем его в блочный элемент*/
+  right: 0;
+  /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  content: "";
+  /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 2px;
+  /*задаём высоту линии*/
+  width: 0%;
+  /*задаём начальную ширину элемента (линии)*/
+  background-color: #FFCBDB;
+  /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out;
+  /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+}
+
+a:hover:after,
+a:focus:after {
+  width: 100%;
+}
+
+a:hover {
+  color: #FCB4D5;
+}
+
+
+
+years {
+  font-size: 40px;
+  margin: auto;
+  width: 70%;
+  height: 7%;
+  left: 50%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+@media (max-width: 820px) {
+  html {
+    width: 100%;
+  }
+
+  body {
+    background-color: black;
+    overflow-x: hidden;
+  }
+
+  back1 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back2 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back3 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+
+
+  .TEXT {
+    width: 90%;
+    font-size: 100%;
+  }
+
+  section {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  ol {
+    line-height: 1.5;
+    float: center;
+    line-height: 1.7;
+    list-style-type: none;
+    /* Убираем исходные маркеры */
+    counter-reset: item;
+    /* Обнуляем счетчик списка */
+  }
+
+  years {
+    font-size: 5vw;
+    width: 90%;
+    height: 24%;
+    padding: 21px 0;
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+
+  label .menu {
+    position: relative;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 500% 500% 500% 500%;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
+    cursor: pointer;
+
+  }
+
+  label .hamburger {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 30px;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+
+  label .hamburger:after,
+  label .hamburger:before {
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  label .hamburger:before {
+    top: -10px;
+  }
+
+  label .hamburger:after {
+    bottom: -10px;
+  }
+
+  label input {
+    display: none;
+  }
+
+  label input:checked+.menu {
+    z-index: 10;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 100px;
+    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
+
+
+  }
+
+  label input:checked+.menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+  }
+
+  label input:checked+.menu .hamburger:after {
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
+
+  }
+
+  label input:checked+.menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+
+  }
+
+  label input:checked+.menu+ul {
+    opacity: 1;
+    z-index: 100;
+    background-color: black;
+  }
+
+  label input:checked+.a {
+
+    transition: 0.1s ease-in-out;
+    color: black;
+  }
+
+  label ul {
+
+    color: white;
+    font-size: 24px;
+    line-height: 1.8;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+  }
+
+  label li {
+    font-size: 4vw;
+    width: 60vw;
+    line-height: 3;
+  }
+
+  label a>span {
+    margin-bottom: 1em;
+    display: none;
+    color: white;
+    text-decoration: none;
+
+  }
+
+}
+
+@media (max-width: 500px) {
+  html {
+    width: 100%;
+  }
+
+  body {
+    background-color: black;
+    overflow-x: hidden;
+  }
+
+  back1 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back2 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back3 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+
+
+  .TEXT {
+    width: 90%;
+    font-size: 1.9vh;
+    text-align: justify;
+    margin: 0 auto;
+  }
+
+  section {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  ol {
+    line-height: 1.5;
+    float: center;
+    line-height: 1.7;
+    list-style-type: none;
+    /* Убираем исходные маркеры */
+    counter-reset: item;
+    /* Обнуляем счетчик списка */
+  }
+
+  years {
+    font-size: 23px;
+    width: 90%;
+    height: 15%;
+    padding: 0;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+  }
+
+  label {
+    height: 15%;
+  }
+
+  label .menu {
+    height: 15%;
+    position: relative;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 500% 500% 500% 500%;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
+    cursor: pointer;
+
+  }
+
+  label .hamburger {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 30px;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+
+  label .hamburger:after,
+  label .hamburger:before {
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  label .hamburger:before {
+    top: -10px;
+  }
+
+  label .hamburger:after {
+    bottom: -10px;
+  }
+
+  label input {
+    display: none;
+  }
+
+  label input:checked+.menu {
+    z-index: 10;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 100px;
+    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
+
+
+  }
+
+  label input:checked+.menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+  }
+
+  label input:checked+.menu .hamburger:after {
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
+
+  }
+
+  label input:checked+.menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+
+  }
+
+  label input:checked+.menu+ul {
+    opacity: 1;
+    z-index: 100;
+    background-color: black;
+  }
+
+  label input:checked+.a {
+
+    transition: 0.1s ease-in-out;
+    color: black;
+  }
+
+  label ul {
+
+    color: white;
+    font-size: 24px;
+    line-height: 1.8;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+  }
+
+  label li {
+    font-size: 4vw;
+    width: 80vw;
+    line-height: 3;
+  }
+
+  label a>span {
+    margin-bottom: 1em;
+    display: none;
+    color: white;
+    text-decoration: none;
+
+  }
+
+  p img {
+    width: 20vh;
+    height: auto;
+  }
+}
+
+@media (max-width:375px) {
+  html {
+    width: 100%;
+  }
+
+  body {
+    background-color: black;
+    font-size: 60%;
+    overflow-x: hidden;
+  }
+
+
+
+  back1 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back2 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  back3 {
+    display: none;
+    width: auto;
+    height: auto;
+  }
+
+  .info {
+    margin: 30px 0 0 0;
+  }
+
+  section {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  ol {
+    line-height: 1.5;
+    float: center;
+    line-height: 1.7;
+    list-style-type: none;
+    /* Убираем исходные маркеры */
+    counter-reset: item;
+    /* Обнуляем счетчик списка */
+  }
+
+  years {
+    font-size: 23px;
+    width: 90%;
+    height: 24%;
+    padding: 21px 0;
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+
+  label .menu {
+    position: relative;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 500% 500% 500% 500%;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
+    cursor: pointer;
+
+  }
+
+  label .hamburger {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 30px;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+
+  label .hamburger:after,
+  label .hamburger:before {
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  label .hamburger:before {
+    top: -10px;
+  }
+
+  label .hamburger:after {
+    bottom: -10px;
+  }
+
+  label input {
+    display: none;
+  }
+
+  label input:checked+.menu {
+    z-index: 10;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 100px;
+    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
+
+
+  }
+
+  label input:checked+.menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+  }
+
+  label input:checked+.menu .hamburger:after {
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
+
+  }
+
+  label input:checked+.menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+
+  }
+
+  label input:checked+.menu+ul {
+    opacity: 1;
+    z-index: 100;
+    background-color: black;
+  }
+
+  label input:checked+.a {
+
+    transition: 0.1s ease-in-out;
+    color: black;
+  }
+
+  label ul {
+
+    color: white;
+
+    line-height: 1.8;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+  }
+
+  label li {
+    font-size: 5vw;
+    width: 80vw;
+    line-height: 3;
+  }
+
+  label a>span {
+    margin-bottom: 1em;
+    display: none;
+    color: white;
+    text-decoration: none;
+
+  }
+}

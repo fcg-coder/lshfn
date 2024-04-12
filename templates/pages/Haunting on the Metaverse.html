@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+
+    
+    <link rel="stylesheet" href="{% static 'glitch.css'%}">
+    <link rel="shortcut icon" href="{% static 'images/icon.png'%}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/Haunting on the Metaverse.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haunting on the Metaverse</title>
+</head>
+<body>
+
+
+
+    
+      
+
+    <div class="label"> Haunting on the Metaverse</div>
+    <div style="left: 25px;
+    top: 400px;
+    position: absolute; line-height: 2;">VRChat world, media installation, video, sound <br>
+
+        Unity programming by Oleg Sysoev<br>
+        
+        Soundtrack by Polina Orlikova (aka Popo)<br>
+        
+        Sound design by Leonid Grishchenko<br></div>
+        
+    <div class="text">The idea of Metaverses has been around for nearly three decades, but in recent years it has been discussed as a new form of internet communication. However, it remains uncertain whether the utopian visions of a decentralized self-organized virtual space are anything more than a business model to reinforce existing corporations. While virtual online platforms strive to improve their immersive technologies and debug user’s experience, the control over it in the pro-Metaverse environments is increasingly being vested in the algorithms of centralized management, whether they be programs or trained employees. In this project, the imperfections of technology in existing and popular virtual platforms are utilized as the main instrument for changing the established and regulated patterns of presence within them. The world for this project is created in VRChat. A map consisting of three spaces is designed to allow for legitimate "breaking" of the interface and degradation of technology performance through glitchy and fractal shaders, which unpredictably influence the viewer's experience of the virtual world from within. Portals between spaces are arranged chaotically, enabling travel between them in any order, getting stuck in a cyberpunk warehouse space or finding oneself in the room of a teenager whose coming of age coincided with the early days of the Internet, opening research archives in boxes inside the basement, or immersing oneself in the algorithmic evolution of a virtual organism.</div>
+   
+   
+   
+    <div class="images">
+
+
+
+        <div class="imgBlock"> 
+            <img src="{% static 'images/Haunting on the Metaverse/fractal.gif'%}"  style="padding: 10px; height: 200px; width: auto; margin: auto;"> 
+           <p> fractal room</p>
+            
+        </div>
+
+
+        <a href="{% url 'django.contrib.flatpages.views.flatpage' 'roomweb1.0/' %}">
+        <div class="imgBlock">
+            <img src="{% static 'images/Haunting on the Metaverse/doll.jpg'%}" style="padding: 10px; height: 200px; width: auto; margin: auto;">
+            <p>web 1.0 room</p>
+            </div>
+        </a>
+
+
+
+        <a href="{% url 'django.contrib.flatpages.views.flatpage' 'glitchRoom/' %}">
+    <div class="text_fcg imgBlock" style="width: 20%;">
+        <div class="environment"></div>
+        <h2 class="hero glitch layers"><span><img src="{% static 'images/Haunting on the Metaverse/image.png'%}" style="padding: 10px; height: 200px; width: auto; margin: auto;">
+            <p style="font-size: 18px; text-align: center;"> glith room</p></span></h2>
+      </div>
+    </a>
+
+        <!-- <div class="imgBlock"> 
+            <img src="images/image.png" style="padding: 10px; height: 200px; width: auto; margin: auto;">
+        <p>glith room (с глитчем на картинке)</p>
+        </div> -->
+    </div>
+</body>
+</html>
