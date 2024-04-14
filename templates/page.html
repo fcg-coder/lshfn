@@ -8,7 +8,11 @@
     <link href="{% static 'css/page.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+   
     <title>
       {% if page.internal_title %}
         {{ page.internal_title }}
@@ -36,6 +40,10 @@
         height: auto;
     }
     
+    .f-carousel__slide img {
+      width: 100%;
+      height: auto;
+  }
 
     </style>
   </head>
@@ -63,29 +71,36 @@
 
 
 
-     
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
    
-        {% for gallery in gallery_range %}
+      {% for gallery in gallery_range %}
         <div class="block">
           <div class="container-slider">
-        <div class="gallery" id="gallery{{ gallery }}">
-            {% for image in page.images.all %}
-            {% if image.gallery_number == gallery %}
-            <div class="slide">
-                <a href="{{ image.image.url }}" data-fancybox="gallery{{ gallery }}">
-                    <img src="{{ image.image.url }}" alt="" />
-                </a>
+            <div class="gallery" id="gallery{{ gallery }}">
+              {% for image in page.images.all %}
+                {% if image.gallery_number == gallery %}
+                  <div class="slide">
+                    <a href="{{ image.image.url }}" data-fancybox="gallery{{ gallery }}" data-caption="{{ image.caption }}" data-thumb="{{ image.image.url }}">
+                      <img src="{{ image.image.url }}"  width="200" height="150" alt="" />
+                    </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
-            {% endif %}
-            {% endfor %}
+          </div>
         </div>
-      </div>
+      {% endfor %}
+  
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery1"]', {
+        Thumbs : {
+          type: "modern"
+        }
+      });    
+    </script>
     </div>
-    
-        {% endfor %}
-   
-
-        
+{% comment %}         
 <script> 
  // Настройки слайдера
 const sliderSpeed = 3000; // Скорость прокрутки в миллисекундах
@@ -113,9 +128,9 @@ document.addEventListener('DOMContentLoaded', startSlider);
 
  
 
-</script>
+</script> {% endcomment %}
 
-    </div>
+  
 
     {% if page.test_variable_1 %}
       <div class="block test_variable_1">
