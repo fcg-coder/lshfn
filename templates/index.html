@@ -12,6 +12,11 @@
   <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
   <title>lshfn</title>
   <style>
+    
+
+  .fancybox-slide--html {
+      padding: 0px;
+  }
     .hidden-text {
       display: none; /* Начально скрыт */
   }
@@ -42,22 +47,24 @@
 
 
     <div class="text-container TEXT">
-      <p> {{content1}}</p>
-      <p id="read-more-btn">read more...</p>
+      <p style="margin: 0; padding: 0;" id = "content1"> {{content1}}</p>
+      <p style="margin: 0; padding: 0; color: gray;" id="read-more-btn">read more...</p>
       <div class="hidden-text">
-          <p style="margin: 0;">  {{content2}} </p>
+          <p style="margin: 0; padding: 0;">  {{content2}} </p>
       </div>
   </div>
   
 
   
   <script> 
+    content1 = document.getElementById('content1');
     document.getElementById('read-more-btn').addEventListener('click', function() {
       var hiddenText = document.querySelector('.hidden-text');
       var buttonText = this.textContent;
       
       if (buttonText === 'read more...') {
           hiddenText.style.display = 'block';
+          content1.style.display = 'none';
           this.textContent = ''; // Изменяем текст кнопки
       } else {
           hiddenText.style.display = 'none';
@@ -75,7 +82,7 @@
     <years>
       {% for year in years %}
         <a href="#fullscreen-modal{{year}}" class="open-modal">{{year}}</a>
-        <div class="modal-content" style = "background-color: rgb(0, 0, 0, 0.5);;" id="fullscreen-modal{{year}}">
+        <div class="modal-content" style= "background: black;" id="fullscreen-modal{{year}}">
          
 
           <div class="modal">
