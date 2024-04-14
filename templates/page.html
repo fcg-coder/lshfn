@@ -70,7 +70,6 @@
       {% endif %}
 
 
-
       <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
    
       {% for gallery in gallery_range %}
@@ -89,18 +88,35 @@
             </div>
           </div>
         </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            Fancybox.bind('[data-fancybox="gallery{{gallery}}"]', {
+              
+              Carousel: {
+                Panzoom: {
+                  decelFriction: 0.5,
+                },
+                transition: "slide",
+              },
+              // Disable image zoom animation on opening and closing
+              Images: {
+                zoom: false,
+              },
+              // Custom CSS transition on opening
+              showClass: "f-fadeIn",
+              Thumbs: {
+                type: "modern"
+              },
+             
+            });
+          });
+        </script>
       {% endfor %}
   
-      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-      Fancybox.bind('[data-fancybox="gallery1"]', {
-        Thumbs : {
-          type: "modern"
-        }
-      });    
-    </script>
+    
     </div>
-{% comment %}         
+      
 <script> 
  // Настройки слайдера
 const sliderSpeed = 3000; // Скорость прокрутки в миллисекундах
@@ -128,7 +144,7 @@ document.addEventListener('DOMContentLoaded', startSlider);
 
  
 
-</script> {% endcomment %}
+</script> 
 
   
 
