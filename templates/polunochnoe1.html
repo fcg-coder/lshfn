@@ -84,12 +84,14 @@
 
 {% for image in images %}
 <div class="pic" style="top: {{ image.random_top }}vh; left: {{ image.random_left }}vw;" onmouseover="moveImage(this)">
-  <a href="{{ image.image.url }}" data-fancybox="gallery">
+  <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption= "{{ image.caption }}">
     <img src="{{ image.image.url }}" alt="{{ image.caption }}">
   </a>
-  <p class="texForPicture">{{ image.caption }}</p>
+
 </div>
 {% endfor %}
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

@@ -1,3 +1,5 @@
+
+
 html {
   margin: 0;
   padding: 0;
@@ -27,6 +29,7 @@ body {
 .fancybox-active {
   height: 100%;
 }
+
 .modal-content {
   display: none;
   position: fixed;
@@ -35,7 +38,7 @@ body {
   width: 100%;
   margin: auto;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: black;
   color: white;
   text-align: center;
   font-size: 24px;
@@ -71,6 +74,7 @@ ul {
   justify-content: space-around;
   list-style-type: none;
   height: 100%;
+  text-align: left;
 }
 
 li {
@@ -182,9 +186,9 @@ a {
 .TEXT {
   max-width: 1000px;
   line-height: 1.6;
-  margin:  0 auto;
+  margin: 0 auto;
   text-align: center;
-  font-size: 120%;
+  font-size: 2vh;
   font-family: "{{font}}";
 }
 
@@ -200,7 +204,9 @@ a {
 
 .info {
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 90%;
+  margin: auto;
   display: flex;
   align-content: space-around;
   flex-direction: column;
@@ -344,139 +350,21 @@ years {
     justify-content: center;
   }
 
-  label .menu {
-    position: relative;
-    z-index: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 500% 500% 500% 500%;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
-    cursor: pointer;
 
-  }
-
-  label .hamburger {
-    position: absolute;
-    top: 135px;
-    left: 50px;
-    width: 30px;
-    display: block;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-  }
-
-  label .hamburger:after,
-  label .hamburger:before {
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  label .hamburger:before {
-    top: -10px;
-  }
-
-  label .hamburger:after {
-    bottom: -10px;
-  }
-
-  label input {
-    display: none;
-  }
-
-  label input:checked+.menu {
-    z-index: 10;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    border-radius: 100px;
-    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
-
-
-  }
-
-  label input:checked+.menu .hamburger {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-
-  }
-
-  label input:checked+.menu .hamburger:after {
-
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    bottom: 0;
-
-  }
-
-  label input:checked+.menu .hamburger:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
-
-  }
-
-  label input:checked+.menu+ul {
-    opacity: 1;
-    z-index: 100;
-    background-color: black;
-  }
-
-  label input:checked+.a {
-
-    transition: 0.1s ease-in-out;
-    color: black;
-  }
-
-  label ul {
-
-    color: white;
-    font-size: 24px;
-    line-height: 1.8;
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-  }
-
-  label li {
-    font-size: 4vw;
-    width: 60vw;
-    line-height: 3;
-  }
-
-  label a>span {
-    margin-bottom: 1em;
-    display: none;
-    color: white;
-    text-decoration: none;
-
-  }
+  
 
 }
 
 @media (max-width: 500px) {
   html {
     width: 100%;
+    height: 100%;
   }
 
   body {
     background-color: black;
     overflow-x: hidden;
+    
   }
 
   back1 {
@@ -501,7 +389,7 @@ years {
 
   .TEXT {
     width: 90%;
-    font-size: 1.9vh;
+    font-size: 1.7vh;
     text-align: justify;
     margin: 0 auto;
   }
@@ -511,7 +399,13 @@ years {
     height: 100%;
   }
 
-
+  .info{
+    min-height: 100vh;
+  }
+  p img {
+      width: 17vh;
+      height: auto;
+  }
 
   ol {
     line-height: 1.5;
@@ -527,141 +421,29 @@ years {
     font-size: 23px;
     width: 90%;
     height: 15%;
-    padding: 0;
+    /* padding: 0; */
     max-width: 90%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-content: center;
     align-items: center;
-  }
+    margin: 20px auto;
+}
 
-  label {
-    height: 15%;
-  }
 
-  label .menu {
-    height: 15%;
-    position: relative;
-    z-index: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 500% 500% 500% 500%;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
-    cursor: pointer;
-
-  }
-
-  label .hamburger {
-    position: absolute;
-    top: 135px;
-    left: 50px;
-    width: 30px;
-    display: block;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-  }
-
-  label .hamburger:after,
-  label .hamburger:before {
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    content: "";
-    position: absolute;
-    display: block;
+  ul {
     width: 100%;
+    margin: 0;
+    margin-bottom: 6px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    list-style-type: none;
     height: 100%;
-  }
-
-  label .hamburger:before {
-    top: -10px;
-  }
-
-  label .hamburger:after {
-    bottom: -10px;
-  }
-
-  label input {
-    display: none;
-  }
-
-  label input:checked+.menu {
-    z-index: 10;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    border-radius: 100px;
-    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
-
-
-  }
-
-  label input:checked+.menu .hamburger {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-
-  }
-
-  label input:checked+.menu .hamburger:after {
-
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    bottom: 0;
-
-  }
-
-  label input:checked+.menu .hamburger:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
-
-  }
-
-  label input:checked+.menu+ul {
-    opacity: 1;
-    z-index: 100;
-    background-color: black;
-  }
-
-  label input:checked+.a {
-
-    transition: 0.1s ease-in-out;
-    color: black;
-  }
-
-  label ul {
-
-    color: white;
-    font-size: 24px;
-    line-height: 1.8;
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-  }
-
-  label li {
-    font-size: 4vw;
-    width: 80vw;
-    line-height: 3;
-  }
-
-  label a>span {
-    margin-bottom: 1em;
-    display: none;
-    color: white;
-    text-decoration: none;
-
+    padding: 0;
   }
 
   p img {
@@ -733,128 +515,24 @@ years {
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: center;
+    margin: 30px auto;
   }
 
-  label .menu {
-    position: relative;
-    z-index: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 500% 500% 500% 500%;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-    box-shadow: 0 0 0 0 #000000, 0 0 0 0 #000000;
-    cursor: pointer;
 
-  }
 
-  label .hamburger {
-    position: absolute;
-    top: 135px;
-    left: 50px;
-    width: 30px;
-    display: block;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-  }
-
-  label .hamburger:after,
-  label .hamburger:before {
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
+  ul {
+    /* width: 50%; */
+    margin-bottom: 6px;
+    /* margin: 100px auto; */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    list-style-type: none;
     height: 100%;
   }
 
-  label .hamburger:before {
-    top: -10px;
-  }
-
-  label .hamburger:after {
-    bottom: -10px;
-  }
-
-  label input {
-    display: none;
-  }
-
-  label input:checked+.menu {
-    z-index: 10;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    border-radius: 100px;
-    box-shadow: 0 0 0 300vw rgb(0, 0, 0), 0 0 0 300vh rgba(0, 0, 0, 0.5);
 
 
-  }
-
-  label input:checked+.menu .hamburger {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-
-  }
-
-  label input:checked+.menu .hamburger:after {
-
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    bottom: 0;
-
-  }
-
-  label input:checked+.menu .hamburger:before {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
-
-  }
-
-  label input:checked+.menu+ul {
-    opacity: 1;
-    z-index: 100;
-    background-color: black;
-  }
-
-  label input:checked+.a {
-
-    transition: 0.1s ease-in-out;
-    color: black;
-  }
-
-  label ul {
-
-    color: white;
-
-    line-height: 1.8;
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-  }
-
-  label li {
-    font-size: 5vw;
-    width: 80vw;
-    line-height: 3;
-  }
-
-  label a>span {
-    margin-bottom: 1em;
-    display: none;
-    color: white;
-    text-decoration: none;
-
-  }
 }
