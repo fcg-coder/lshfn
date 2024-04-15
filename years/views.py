@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from .models import Year, Project,startPage,AvailableFont,PageContent, Image
-from django.db.models import Max
+from .models import Year, Project,startPage,AvailableFont,PageContent, Image, Gif
+
 import random
 from django_user_agents.utils import get_user_agent
 
@@ -12,9 +12,10 @@ def index(request):
     font = startPage.objects.filter(id=1).first().font
     content1 = startPage.objects.filter(id=1).first().content1
     content2 = startPage.objects.filter(id=1).first().content2
-    
+    gifs = Gif.objects.all()  # Получаем все объекты модели Gif
+
     pages = PageContent.objects.all()
-    return render(request, 'index.html', {'years':years   , 'projects':projects, 'font':font , 'content1':content1,'content2':content2, 'pages':pages })
+    return render(request, 'index.html', {'years':years   , 'projects':projects, 'font':font , 'content1':content1,'content2':content2, 'pages':pages , 'gifs': gifs})
 
 
 
