@@ -29,17 +29,41 @@
   .TEXT {
     font-family: "{{font}}";
   }
+
+
+  .randGif{
+    z-index: 10000;
+    width: 100px;
+    height: auto;
+    position:absolute;
+}
+
+.arangGif{
+  z-index: 10000;
+  position:absolute;
+  text-decoration: none;
+}
+  
+  
     
   </style>
 </head>
+
 <body>
 
+
+  
  <back1></back1>
 <back2></back2>
 <back3></back3> 
 
 <div class="info">
  
+  {% for gif in gifs %}
+<a class="arangGif" href="{{gif.link}}">
+  <img class="randGif" src="{{ gif.image.url }}" alt="Gif">
+</a>
+  {% endfor %} 
     <p align="center" style="position: relative;">
         <img src="static/images/1.webp" width="200" height="200" alt="Фотография">
     </p>
@@ -99,7 +123,7 @@
     </years>
 
 
-
+  
 
 
     <div style="text-align: center;"> <a href="{% static 'document/CV.pdf' %}" data-fancybox data-type="iframe" data-src="{% static 'document/CV.pdf' %}" class="fancybox">CV</a> </div>
@@ -149,9 +173,10 @@
 </div>
 
 
+
 </div>
 
-
+<script src="{% static 'js/randGifindex.js'%}"></script>
 
 <!-- Подключение скриптов и FancyBox -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

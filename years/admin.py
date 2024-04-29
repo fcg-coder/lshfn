@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Year, Project,AvailableFont,startPage,Image,PageContent
+from .models import Year, Project,AvailableFont,startPage,Image,PageContent,Gif
 
+
+
+class GifAdmin(admin.ModelAdmin):
+    list_display = ('id', 'image', 'Index')  # Отображаемые поля в списке объектов
+
+admin.site.register(Gif, GifAdmin)
 
 @admin.register(Year)
 class YearAdmin(admin.ModelAdmin):

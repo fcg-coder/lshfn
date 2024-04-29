@@ -24,6 +24,13 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+
+
+class Gif(models.Model):
+    image = models.ImageField(upload_to='images/')  # Поле для загрузки картинки
+    link = models.URLField(blank=True, null=True, verbose_name='Ссылка')
+   
+    Index = models.ForeignKey('startPage', related_name='images', on_delete=models.CASCADE, default=1)
 class startPage(models.Model):
     content1 = models.CharField(max_length=100000000000)
     content2 = models.CharField(max_length=100000000000)
