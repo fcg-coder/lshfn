@@ -351,7 +351,13 @@ years {
   }
 
 
-  
+
+  .arangGif{
+    display: none;
+  }
+  .rangGif{
+    display: none;
+  }
 
 }
 
@@ -450,9 +456,17 @@ years {
     width: 20vh;
     height: auto;
   }
+
+
+  .arangGif{
+    display: none;
+  }
+  .rangGif{
+    display: none;
+  }
 }
 
-@media (max-width:375px) {
+@media (max-width:275px) {
   html {
     width: 100%;
   }
@@ -535,4 +549,10 @@ years {
 
 
 
+   .arangGif{
+    display: none;
+  }
+  .rangGif{
+    display: none;
+  }
 }
