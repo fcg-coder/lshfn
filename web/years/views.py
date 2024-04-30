@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Year, Project,startPage,AvailableFont,PageContent, Image, Gif
 
 import random
-from django_user_agents.utils import get_user_agent
+# from django_user_agents.utils import get_user_agent
 
 
 def index(request):
@@ -33,14 +33,14 @@ def polunochnoe(request):
         image.random_top = random.randint(0, 90)
         image.random_left = random.randint(0, 90)
 
-    user_agent = get_user_agent(request)
-    if user_agent.is_mobile:
-        # Отобразить страницу для мобильного устройства
-        return render(request, 'page.html', {'page': page, 'images': images, 'gallery_range': gallery_range})
-    elif user_agent.is_tablet:
-        # Отобразить страницу для планшета
-        return render(request, 'page.html', {'page': page, 'images': images, 'gallery_range': gallery_range})
-    else:
+    # user_agent = get_user_agent(request)
+    # if user_agent.is_mobile:
+    #     # Отобразить страницу для мобильного устройства
+    #     return render(request, 'page.html', {'page': page, 'images': images, 'gallery_range': gallery_range})
+    # elif user_agent.is_tablet:
+    #     # Отобразить страницу для планшета
+    #     return render(request, 'page.html', {'page': page, 'images': images, 'gallery_range': gallery_range})
+    # else:
        
 
         return render(request, 'polunochnoe1.html', {'page': page, 'images': images, 'gallery_range': gallery_range})
