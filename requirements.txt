@@ -1,0 +1,3 @@
+Django
+django_user_agents
+Pillow
