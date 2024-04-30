@@ -7,6 +7,8 @@ import random
 
 
 def index(request):
+    file = startPage.objects.first()  # Получаем первый экземпляр модели
+    print( "file -> ", file)
     years = Year.objects.all()
     projects = Project.objects.all()
     font = startPage.objects.filter(id=1).first().font
@@ -15,7 +17,7 @@ def index(request):
     gifs = Gif.objects.all()  # Получаем все объекты модели Gif
 
     pages = PageContent.objects.all()
-    return render(request, 'index.html', {'years':years   , 'projects':projects, 'font':font , 'content1':content1,'content2':content2, 'pages':pages , 'gifs': gifs})
+    return render(request, 'index.html', {'years':years   , 'projects':projects, 'font':font , 'content1':content1,'content2':content2, 'pages':pages , 'gifs': gifs , 'file':file })
 
 
 

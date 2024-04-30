@@ -36,6 +36,7 @@ class startPage(models.Model):
     content2 = models.CharField(max_length=100000000000)
     name = models.CharField(max_length=200)
     font = models.ForeignKey(AvailableFont, on_delete=models.CASCADE) 
+    pdf_file = models.FileField(upload_to='document/', null=True, blank=True)
     def __str__(self):
         return str(self.name)
 

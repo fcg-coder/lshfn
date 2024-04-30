@@ -126,7 +126,7 @@
   
 
 
-    <div style="text-align: center;"> <a href="{% static 'document/CV.pdf' %}" data-fancybox data-type="iframe" data-src="{% static 'document/CV.pdf' %}" class="fancybox">CV</a> </div>
+    <div style="text-align: center;"> <a href="{{file.pdf_file.url}}" data-fancybox data-type="iframe" data-src="{{file.pdf_file.url}}" class="fancybox">CV</a> </div>
     <script>
       $(document).ready(function() {
         // Инициализация FancyBox
