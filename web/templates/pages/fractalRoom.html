@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <title>Responsive Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            height: 600px; /* Устанавливаем фиксированную высоту для галереи */
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .gallery a {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .gallery a.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%; /* Подгоняем высоту изображения под размер контейнера */
+            object-fit: cover; /* Кадрирование изображения, чтобы оно заполняло весь контейнер */
+        }
+
+        @media (max-width: 600px) {
+            .text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Основное изображение в верхней части -->
+        <img src="{% static 'images/fractalRoom/1.jpeg' %}" alt="Main Image" class="main-image" />
+
+        <div class="text">
+            <p>Upon entering the world, the user is first introduced to an amorphous and abstract space, which bears a striking resemblance to internal organs or a rudimentary living organism. This space is characterized by its enveloping and slippery nature, with its partially filled water and dynamic fractal objects serving to create an atmosphere of non-human habitation in the virtual realm. Concurrently, the user experiences a sense of being in a secure and comforting space, reminiscent of a womb, while also feeling a sense of being in an unexplored and extraterrestrial closed organ that has (or not) yet to be claimed.</p>
+        </div>
+
+        <div class="gallery">
+            <a href="{% static 'images/fractalRoom/2.jpeg' %}" data-fancybox="gallery" data-caption="Image 2" class="active">
+                <img src="{% static 'images/fractalRoom/2.jpeg' %}" alt="Image 2" />
+            </a>
+            <a href="{% static 'images/fractalRoom/3.jpeg' %}" data-fancybox="gallery" data-caption="Image 3">
+                <img src="{% static 'images/fractalRoom/3.jpeg' %}" alt="Image 3" />
+            </a>
+            <a href="{% static 'images/fractalRoom/4.jpeg' %}" data-fancybox="gallery" data-caption="Image 4">
+                <img src="{% static 'images/fractalRoom/4.jpeg' %}" alt="Image 4" />
+            </a>
+            <a href="{% static 'images/fractalRoom/5.jpeg' %}" data-fancybox="gallery" data-caption="Image 5">
+                <img src="{% static 'images/fractalRoom/5.jpeg' %}" alt="Image 5" />
+            </a>
+            <a href="{% static 'images/fractalRoom/6.jpeg' %}" data-fancybox="gallery" data-caption="Image 6">
+                <img src="{% static 'images/fractalRoom/6.jpeg' %}" alt="Image 6" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        // Инициализация Fancybox
+        Fancybox.bind('[data-fancybox="gallery"]', {});
+
+        // Логика слайд-шоу
+        const slides = document.querySelectorAll('.gallery a');
+        let currentSlide = 0;
+        const slideInterval = 4000; // 4 секунды на каждое изображение
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, slideInterval);
+    </script>
+</body>
+</html>

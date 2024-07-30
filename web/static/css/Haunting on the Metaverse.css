@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: black;;
     display: flex;
     color: white;
@@ -69,4 +69,86 @@ a {
     /*Задаём высоту строки (можно в пикселях)*/
     color: white;
     /*Задаём цвет ссылки*/
-  }
+  } */
+
+
+
+   body {
+       margin: 0;
+       padding: 0;
+       font-family: Arial, sans-serif;
+       background-color: black;
+       color: white;
+       height: 100vh;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+   }
+
+   .sidebar-top {
+       position: fixed;
+       top: 20%;
+       left: 3%;
+       font-size: 0.9em;
+       line-height: 1.5em;
+   }
+
+   .content {
+       text-align: center;
+       margin: auto;
+       max-width: 800px;
+       padding: 20px;
+   }
+
+   h1 {
+       font-size: 2.5em;
+       margin-bottom: 20px;
+   }
+
+   p {
+       line-height: 1.6em;
+       text-align: justify;
+   }
+
+   .images {
+       width: 100%;
+       display: flex;
+       justify-content: space-around;
+       margin-top: 20px;
+   }
+
+   .image {
+       text-align: center;
+   }
+
+   .image img {
+       width: 150px;
+       height: auto;
+       border: 2px solid white;
+       border-radius: 8px;
+       transition: transform 0.3s;
+   }
+
+   .image img:hover {
+       transform: scale(1.1);
+   }
+
+   .image p {
+       color: limegreen;
+       margin-top: 10px;
+       font-size: 0.9em;
+   }
+
+   .footer-text {
+       position: absolute;
+       right: 10px;
+       bottom: 10px;
+       font-size: 0.9em;
+       color: limegreen;
+       text-align: right;
+   }
+
+   a {
+       text-decoration: none;
+       color: inherit;
+   }
