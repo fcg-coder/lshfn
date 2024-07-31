@@ -1,15 +1,15 @@
 FROM python:3.9
 
-COPY requirements.txt /web/requirements.txt
+COPY requirements.txt /lshfn/requirements.txt
 
-COPY web /web
+COPY lshfn /lshfn
 
-WORKDIR /web
+WORKDIR /lshfn
 
 EXPOSE 8000
 
 
-RUN pip install -r /web/requirements.txt
+RUN pip install -r /lshfn/requirements.txt
 
 RUN adduser --disabled-password fcg
 
