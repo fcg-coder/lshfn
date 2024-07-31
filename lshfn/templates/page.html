@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'css/page.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+   
+    <title>
+      {% if page.internal_title %}
+        {{ page.internal_title }}
+      {% else %}
+         lshfn
+      {% endif %}
+    </title>
+    <style>
+      .container-slider {
+        overflow: hidden;
+    }
+    
+    .gallery {
+        display: flex;
+        transition: transform 1.5s ease-in-out;
+    }
+    
+    .slide {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .f-carousel__slide img {
+      width: 100%;
+      height: auto;
+  }
+
+    </style>
+  </head>
+  <body>
+   
+
+    <div class="content">
+      {% if page.text %}
+        <div class="block">
+          <!-- Блок для текста -->
+          <p class="txt">{{ page.text }}</p>
+        </div>
+      {% endif %}
+
+
+      
+      {% if page.youtube_link %}
+        <div class="block">
+          <!-- Блок для видео -->
+          
+          <iframe  class= "video" src="{{ page.youtube_link }}" frameborder="0" allowfullscreen ></iframe>
+          <p style=" font-family: {{ page.font_video_caption }}">{{ page.video_caption }}</p>
+        </div>
+      {% endif %}
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+   
+      {% for gallery in gallery_range %}
+        <div class="block">
+          <div class="container-slider">
+            <div class="gallery" id="gallery{{ gallery }}">
+              {% for image in page.images.all %}
+                {% if image.gallery_number == gallery %}
+                  <div class="slide">
+                    <a href="{{ image.image.url }}" data-fancybox="gallery{{ gallery }}" data-caption="{{ image.caption }}" data-thumb="{{ image.image.url }}">
+                      <img src="{{ image.image.url }}"  width="200" height="150" alt="" />
+                    </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            Fancybox.bind('[data-fancybox="gallery{{gallery}}"]', {
+              Toolbar: {
+                display: {
+                  left: ["infobar"],
+                  middle: [
+                    "zoomIn",
+                    "zoomOut",
+                    "toggle1to1",
+                    "rotateCCW",
+                    "rotateCW",
+                    "flipX",
+                    "flipY",
+                  ],
+                  right: ["slideshow", "thumbs", "close"],
+                },
+              },
+              Carousel: {
+                Panzoom: {
+                  decelFriction: 0.5,
+                },
+                transition: "slide",
+              },
+              // Disable image zoom animation on opening and closing
+              Images: {
+                zoom: false,
+              },
+              // Custom CSS transition on opening
+              showClass: "f-fadeIn",
+              Thumbs: {
+                type: "modern"
+              },
+             
+            });
+          });
+          
+        </script>
+      {% endfor %}
+  
+         
+    </div>
+      
+<script> 
+ // Настройки слайдера
+const sliderSpeed = 3000; // Скорость прокрутки в миллисекундах
+
+// Функция для автоматической прокрутки слайдера
+function startSlider() {
+    const galleries = document.querySelectorAll('.gallery');
+
+    galleries.forEach(gallery => {
+        let currentIndex = 0;
+        const slides = gallery.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            gallery.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, sliderSpeed);
+    });
+}
+
+// Запускаем слайдер после загрузки документа
+document.addEventListener('DOMContentLoaded', startSlider);
+  
+
+
+ 
+
+</script> 
+
+  
+
+    {% if page.test_variable_1 %}
+      <div class="block test_variable_1">
+        <!-- Блок для текста -->
+        <p style="width: 100%">{{ page.test_variable_1 }}</p>
+      </div>
+    {% endif %}
+
+    {% if page.youtube_link2 %}
+      <div class="block blockvideo2">
+        <!-- Блок для видео -->
+        <iframe class = "video2" src="{{ page.youtube_link2 }}" frameborder="0" allowfullscreen></iframe>
+        <p>{{ page.video_caption2 }}</p>
+      </div>
+    {% endif %}
+
+    {% if page.youtube_link3 %}
+      <div class="block blockvideo2">
+        <!-- Блок для видео -->
+        <iframe class = "video2" src="{{ page.youtube_link3 }}" frameborder="0" allowfullscreen></iframe>
+        <p>{{ page.video_caption3 }}</p>
+      </div>
+    {% endif %}
+
+
+  
+
+    <script 
+src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js">
+</script>
+
+<script 
+src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js">
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,389 @@
+@font-face {
+    font-family: "Sinistre-S†Caroline";
+    src: url('../fonts/Sinistre-S†Caroline.woff');
+}
+
+@font-face {
+    font-family: "ALIENATI";
+    src: url('../fonts/ALIENATI.woff');
+}
+
+@font-face {
+    font-family: "AlienFur";
+    src: url('../fonts/AlienFur.woff');
+}
+
+@font-face {
+    font-family: "Alieo";
+    src: url('../fonts/Alieo.woff');
+}
+
+@font-face {
+    font-family: "Angelized";
+    src: url('../fonts/Angelized.woff');
+}
+
+@font-face {
+    font-family: "Cairn-RegularOutlined";
+    src: url('../fonts/Cairn-RegularOutlined.woff');
+}
+
+@font-face {
+    font-family: "Cairn-Rounded";
+    src: url('../fonts/Cairn-Rounded.woff');
+}
+
+@font-face {
+    font-family: "Cairn-RoundedOutlined";
+    src: url('../fonts/Cairn-RoundedOutlined.woff');
+}
+
+@font-face {
+    font-family: "Cairn";
+    src: url('../fonts/Cairn.woff');
+}
+
+@font-face {
+    font-family: "CFTechnoMania-Slanted";
+    src: url('../fonts/CFTechnoMania-Slanted.woff');
+}
+
+@font-face {
+    font-family: "Cyberverse Condensed Bold";
+    src: url('../fonts/Cyberverse Condensed Bold.woff');
+}
+
+@font-face {
+    font-family: "Cyberverse Condensed Italic";
+    src: url('../fonts/Cyberverse Condensed Italic.woff');
+}
+
+@font-face {
+    font-family: "Cyberverse Condensed";
+    src: url('../fonts/Cyberverse Condensed.woff');
+}
+
+@font-face {
+    font-family: "Cyberverse Italic";
+    src: url('../fonts/Cyberverse Italic.woff');
+}
+
+@font-face {
+    font-family: "FKRomanStandardTrial-Black";
+    src: url('../fonts/FKRomanStandardTrial-Black.woff');
+}
+
+@font-face {
+    font-family: "FKRomanStandardTrial-BlackOblique";
+    src: url('../fonts/FKRomanStandardTrial-BlackOblique.woff');
+}
+
+@font-face {
+    font-family: "FKScreamerLegacyTrial-Backslanted";
+    src: url('../fonts/FKScreamerLegacyTrial-Backslanted.woff');
+}
+
+@font-face {
+    font-family: "FKScreamerLegacyTrial-SemiBackslanted";
+    src: url('../fonts/FKScreamerLegacyTrial-SemiBackslanted.woff');
+}
+
+@font-face {
+    font-family: "FKScreamerLegacyTrial-SemiSlanted";
+    src: url('../fonts/FKScreamerLegacyTrial-SemiSlanted.woff');
+}
+
+@font-face {
+    font-family: "FKScreamerLegacyTrial-Slanted";
+    src: url('../fonts/FKScreamerLegacyTrial-Slanted.woff');
+}
+
+@font-face {
+    font-family: "galaxy_1";
+    src: url('../fonts/galaxy_1.woff');
+}
+
+@font-face {
+    font-family: "galaxy_1ci";
+    src: url('../fonts/galaxy_1ci.woff');
+}
+
+@font-face {
+    font-family: "Last Day On Earth";
+    src: url('../fonts/Last Day On Earth.woff');
+}
+
+@font-face {
+    font-family: "Lightyear Shadow";
+    src: url('../fonts/Lightyear Shadow.woff');
+}
+
+@font-face {
+    font-family: "Mons Olympia Bold Italic";
+    src: url('../fonts/Mons Olympia Bold Italic.woff');
+}
+
+@font-face {
+    font-family: "Mons Olympia Bold";
+    src: url('../fonts/Mons Olympia Bold.woff');
+}
+
+@font-face {
+    font-family: "Mons Olympia Condensed Bold Italic";
+    src: url('../fonts/Mons Olympia Condensed Bold Italic.woff');
+}
+
+@font-face {
+    font-family: "Mons Olympia Condensed";
+    src: url('../fonts/Mons Olympia Condensed.woff');
+}
+
+@font-face {
+    font-family: "multivac-ghost";
+    src: url('../fonts/multivac-ghost.woff');
+}
+
+@font-face {
+    font-family: "multivac-interference";
+    src: url('../fonts/multivac-interference.woff');
+}
+
+@font-face {
+    font-family: "RoadTest Italic";
+    src: url('../fonts/RoadTest Italic.woff');
+}
+
+@font-face {
+    font-family: "RoadTest";
+    src: url('../fonts/RoadTest.woff');
+}
+
+@font-face {
+    font-family: "Robotic Cyborg Back Italic";
+    src: url('../fonts/Robotic Cyborg Back Italic.woff');
+}
+
+@font-face {
+    font-family: "Robotic Cyborg Italic";
+    src: url('../fonts/Robotic Cyborg Italic.woff');
+}
+
+@font-face {
+    font-family: "SF Outer Limits DistUpright";
+    src: url('../fonts/SF Outer Limits DistUpright.woff');
+}
+
+@font-face {
+    font-family: "SF Outer Limits Extended";
+    src: url('../fonts/SF Outer Limits Extended.woff');
+}
+
+@font-face {
+    font-family: "SF Outer Limits ExtUpright";
+    src: url('../fonts/SF Outer Limits ExtUpright.woff');
+}
+
+@font-face {
+    font-family: "SF Outer Limits Upright";
+    src: url('../fonts/SF Outer Limits Upright.woff');
+}
+
+@font-face {
+    font-family: "SF Outer Limits";
+    src: url('../fonts/SF Outer Limits.woff');
+}
+
+@font-face {
+    font-family: "Spac3 halftone";
+    src: url('../fonts/Spac3 halftone.woff');
+}
+
+@font-face {
+    font-family: "spider-bold-italic";
+    src: url('../fonts/spider-bold-italic.woff');
+}
+
+@font-face {
+    font-family: "spider-hollow-inverse";
+    src: url('../fonts/spider-hollow-inverse.woff');
+}
+
+@font-face {
+    font-family: "spider-hollow";
+    src: url('../fonts/spider-hollow.woff');
+}
+
+@font-face {
+    font-family: "spider-inverse";
+    src: url('../fonts/spider-inverse.woff');
+}
+
+@font-face {
+    font-family: "spider";
+    src: url('../fonts/spider.woff');
+}
+
+@font-face {
+    font-family: "THE SOLSTICE";
+    src: url('../fonts/THE SOLSTICE.woff');
+}
+
+@font-face {
+    font-family: "TIEWING";
+    src: url('../fonts/TIEWING.woff');
+}
+
+@font-face {
+    font-family: "zero hour";
+    src: url('../fonts/zero hour.woff');
+}
+
+@font-face {
+    font-family: "actionis";
+    src: url('../fonts/actionis.woff');
+}
+
+@font-face {
+    font-family: "AquilineTwo";
+    src: url('../fonts/AquilineTwo.woff');
+}
+
+@font-face {
+    font-family: "AUSRINE";
+    src: url('../fonts/AUSRINE.woff');
+}
+
+@font-face {
+    font-family: "Berzulis-BARSTUKAI-Regular";
+    src: url('../fonts/Berzulis-BARSTUKAI-Regular.woff');
+}
+
+@font-face {
+    font-family: "Berzulis-GAILA-Regular";
+    src: url('../fonts/Berzulis-GAILA-Regular.woff');
+}
+
+@font-face {
+    font-family: "Berzulis-MAGYLA-Regular";
+    src: url('../fonts/Berzulis-MAGYLA-Regular.woff');
+}
+
+@font-face {
+    font-family: "Berzulis-PIZIUS-regular";
+    src: url('../fonts/Berzulis-PIZIUS-regular.woff');
+}
+
+@font-face {
+    font-family: "darkcrystalscript";
+    src: url('../fonts/darkcrystalscript.woff');
+}
+
+@font-face {
+    font-family: "dragonwi";
+    src: url('../fonts/dragonwi.woff');
+}
+
+@font-face {
+    font-family: "europa";
+    src: url('../fonts/europa.woff');
+}
+
+@font-face {
+    font-family: "extech";
+    src: url('../fonts/extech.woff');
+}
+
+@font-face {
+    font-family: "extechs";
+    src: url('../fonts/extechs.woff');
+}
+
+@font-face {
+    font-family: "Futu";
+    src: url('../fonts/Futu.woff');
+}
+
+@font-face {
+    font-family: "GENOTYPE";
+    src: url('../fonts/GENOTYPE.woff');
+}
+
+@font-face {
+    font-family: "hydro";
+    src: url('../fonts/hydro.woff');
+}
+
+@font-face {
+    font-family: "J-Flames";
+    src: url('../fonts/J-Flames.woff');
+}
+
+@font-face {
+    font-family: "KUPOLE-Regular";
+    src: url('../fonts/KUPOLE-Regular.woff');
+}
+
+@font-face {
+    font-family: "NotoEmoji-Regular";
+    src: url('../fonts/NotoEmoji-Regular.woff');
+}
+
+@font-face {
+    font-family: "Omicron";
+    src: url('../fonts/Omicron.woff');
+}
+
+@font-face {
+    font-family: "Powerpuff";
+    src: url('../fonts/Powerpuff.woff');
+}
+
+@font-face {
+    font-family: "realhorrorshow";
+    src: url('../fonts/realhorrorshow.woff');
+}
+
+@font-face {
+    font-family: "Sacred Rights";
+    src: url('../fonts/Sacred Rights.woff');
+}
+
+@font-face {
+    font-family: "STARBAT_";
+    src: url('../fonts/STARBAT_.woff');
+}
+
+@font-face {
+    font-family: "stiletto";
+    src: url('../fonts/stiletto.woff');
+}
+
+@font-face {
+    font-family: "Super_Air_Ben";
+    src: url('../fonts/Super_Air_Ben.woff');
+}
+
+@font-face {
+    font-family: "ZALTYS-Regular";
+    src: url('../fonts/ZALTYS-Regular.woff');
+}
+
+@font-face {
+    font-family: "Xtraordinary";
+    src: url('../fonts/Xtraordinary.woff');
+}
+
+@font-face {
+    font-family: "newglitchdemoregular";
+    src: url('../fonts/newglitchdemoregular.woff');
+}
+
+@font-face {
+    font-family: "FKRasterRomanCompactTrial-Sharp";
+    src: url('../fonts/FKRasterRomanCompactTrial-Sharp.woff');
+}
+
+@font-face {
+    font-family: "webfont";
+    src: url('../fonts/webfont.woff');
+}

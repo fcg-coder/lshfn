@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/glitchRoom.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/glitch1.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Room</title>
+    <!-- Подключение стилей Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <style>
+        .gallery {
+            position: relative; /* Set the container as relative for absolute positioning */
+            width: 100%; /* Set the desired width */
+            height: 300px; /* Set a fixed height for the collage */
+            margin: 0 auto; /* Center the gallery */
+            overflow: hidden; /* Hide any overflow */
+            border-radius: 10px; /* Optional: add a border-radius */
+            margin: auto;
+        }
+        .gallery a {
+            position: absolute; /* Position each image absolutely */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Start with all images hidden */
+            transition: opacity 0.5s ease; /* Smooth transition */
+            display: flex;
+        }
+        .gallery a.active {
+            opacity: 1; /* Show the active image */
+        }
+        .gallery img {
+            width: auto;
+            height: 100%;
+            object-fit: cover; /* Cover the entire space */
+            border-radius: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+  <div style="display: block; position: absolute; width: 50%; margin: auto; height: 100vh; z-index: -90; background-color: black;"></div>
+    <div class="label1">
+        <div style="margin: 20px;"> <img src="{% static 'images/glitch/glitch_2.png' %}" style="height: 20vh; width: auto;"> </div>
+        <div style="margin: 20px;"> <img src="{% static 'images/glitch/glitch_1_copy.png' %}" style="height: 20vh; width: auto;"> </div>
+    </div>
+
+    <div class="text_fcg" style="padding: 10px; text-align: justify; color: grey; font-family: 'Cyberverse Condensed', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 10px; width: 45%; line-height: 1.5;">
+        <div class="environment"></div>
+        <h2 class="hero glitch layers" style="line-height: 1.2; color: rgb(0, 255, 0);">
+            <span>
+                The space, as a whole, bears a resemblance to abandoned warehouse rooms, replete with enigmatic and, indeed, suspenseful objects dispersed throughout. The effect of abandonment and passive brokenness of the rooms create a sense of liminality that corresponds to specific internet cultures such as weirdcore and oddcore. Of particular note is one of the subspaces which creates the illusion of an infinitely repeating corridor, leading to the same room, in which the glitch effect becomes increasingly intense with each subsequent traversal. This technique, in many ways, is reminiscent of the application used in the Ooga Booga 2.0 virtual world by TheZiver. However, the glitch shader employed in our design has been meticulously selected and subjected to exhaustive discussion, duly accounting for the unique peculiarities of our virtual realm. Notably, as users venture further down the corridor and into the room, the glitch effect progressively compromises both vision and control within VRChat. Furthermore, it must be emphasized that the manifestation of this effect varies subtly among individual users, depending on the specific configuration of their avatar and computer system. In this particular environment, the sense of immersion is such that one's agency and spatial logic are relinquished, leaving them at the mercy of the underlying technological infrastructure. The second sub-environment, accessible via a portal, features an interactive camera. Through the implementation of a kaleidoscopic/glitchy shader, the displayed imagery is subject to distortions that are then projected onto the virtual room's wall, providing a brief opportunity to capture anomalies in the static. Notably, the portal embedded within the image serves as a gateway to the next spatial domain, situated in the realm of Web 1.0.
+            </span>
+        </h2>
+    </div>
+
+    <!-- Галерея изображений -->
+    <div class="gallery">
+        <a href="{% static 'images/glitch/1.png' %}" data-fancybox="gallery" data-caption="Image 1" class="active">
+            <img src="{% static 'images/glitch/1.png' %}" alt="Image 1">
+        </a>
+        <a href="{% static 'images/glitch/2.png' %}" data-fancybox="gallery" data-caption="Image 2">
+            <img src="{% static 'images/glitch/2.png' %}" alt="Image 2">
+        </a>
+        <a href="{% static 'images/glitch/3.png' %}" data-fancybox="gallery" data-caption="Image 3">
+            <img src="{% static 'images/glitch/3.png' %}" alt="Image 3">
+        </a>
+        <a href="{% static 'images/glitch/4.png' %}" data-fancybox="gallery" data-caption="Image 4">
+            <img src="{% static 'images/glitch/4.png' %}" alt="Image 4">
+        </a>
+    </div>
+
+    <!-- Подключение скриптов Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Инициализация Fancybox
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            Thumbs: false, // Отключение миниатюр
+            Toolbar: true, // Включение панели инструментов
+        });
+
+        // JavaScript to cycle through images
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.gallery a');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            // Change images every 3 seconds
+            setInterval(showNextImage, 3000);
+        });
+    </script>
+</body>
+</html>
