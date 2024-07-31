@@ -22,4 +22,5 @@ jobs:
       env:
         SSHPASS: ${{ secrets.SSH_PASSWORD }}
       run: |
-        sshpass -e scp -o StrictHostKeyChecking=no -r ./* dariaifp_1@dariaifp.beget.tech:
+        sshpass -e scp -v -o StrictHostKeyChecking=no -r ./* dariaifp_1@dariaifp.beget.tech:
+
