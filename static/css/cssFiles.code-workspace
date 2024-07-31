@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../images"
+		},
+		{
+			"path": "../jsFiles"
+		},
+		{
+			"path": "../METAVERS"
+		},
+		{
+			"path": "../otherFiles"
+		}
+	]
+}

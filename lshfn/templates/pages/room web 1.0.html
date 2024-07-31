@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Web 1.0</title>
+    <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+   
+    <style>
+      html {
+        background-color: black;
+      }
+      .intro {
+        display: flex;
+        justify-content: space-around;
+        width: 40vw;
+        height: 70%;
+        margin: 0 auto;
+      }
+      .label1 {
+        display: flex;
+        width: 70%;
+        margin: auto;
+        justify-content: center;
+      }  
+      .label2 {
+        font-size: 1vw;
+        display: flex;
+        width: 40vw;
+        margin: auto;
+        justify-content: center;
+      }
+      .gallery {
+        position: relative;
+        width: 80%;
+        height: 400px; /* Устанавливаем фиксированную высоту для галереи */
+        margin: 20px auto;
+        overflow: hidden;
+      }
+      .gallery img {
+        width: 100%;
+        height: 100%; /* Устанавливаем высоту изображения равной высоте контейнера */
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        pointer-events: none; /* Отключаем обработку событий для невидимых изображений */
+      }
+      .gallery a.active img {
+        opacity: 1;
+        pointer-events: auto; /* Включаем обработку событий только для видимого изображения */
+      }
+    </style>
+</head>
+<body>
+
+    <div class="label1">
+        <div style="margin: 20px;">
+            <img src="{% static 'images/roomImg/spaceweb1.png' %}" style="height: 20vh; width: auto;">
+        </div>
+        <div style="margin: 20px;">
+            <img src="{% static 'images/roomImg/basement.png' %}" style="height: 20vh; width: auto;">
+        </div>
+    </div>
+
+    <div class="label2">
+        <div style="padding: 10px; text-align: justify; color: grey; font-family: 'FKRasterRomanCompactTrial-Sharp';">
+            The Web 1.0 room comprises two distinct spaces, namely, the Internet's girl room and the basement area. The textures in the former have been created using KidPix, a child-oriented drawing program from the year 2001, and are designed to resemble the graphic style of the early web. Voxel models and GIFs are also employed to generate the early Internet environment and resemble, for instance, GeoCities page. The design of the early web pages was quite different from what we can see today.
+            The web design of custom-made pages was based on table structure and filled with links leading to other places on the internet. When you enter a website, you see the “welcome” signs and other signatures that were made by the website’s owner, resemble visiting somebody’s house.
+        </div>
+        
+        <div style="padding: 10px; text-align: justify; font-family: 'webfont'; font-size: 120%; color: rgb(239, 191, 222);">
+            That was an idea behind creating the web 1.0 space in our project – to use the web design patterns of early web to construct the interior architecture for the pro-Metaverse platform. We would like to see this technique not only as a nostalgic reference but as a means of complex and unexpected world-building, where internal connections between worlds and exploratory archives are established. In the basement space, we have arranged several such external and internal archives (on are.na, Tumblr, and worlds in VRC), which are the result of theoretical and practical research in virtual worlds. The transportation between different platforms and the limitless structure of the world are important to us as a technique for transversal world-building within the pro-Metaverse.
+        </div>
+    </div>
+
+    <div class="intro">
+        <div class="gallery">
+            <a href="{% static 'images/roomImg/1.png' %}" data-fancybox="gallery" data-caption="Image 1" class="active">
+                <img src="{% static 'images/roomImg/1.png' %}" alt="Image 1" />
+            </a>
+            <a href="{% static 'images/roomImg/2.png' %}" data-fancybox="gallery" data-caption="Image 2">
+                <img src="{% static 'images/roomImg/2.png' %}" alt="Image 2" />
+            </a>
+            <a href="{% static 'images/roomImg/3.png' %}" data-fancybox="gallery" data-caption="Image 3">
+                <img src="{% static 'images/roomImg/3.png' %}" alt="Image 3" />
+            </a>
+            <a href="{% static 'images/roomImg/4.png' %}" data-fancybox="gallery" data-caption="Image 4">
+                <img src="{% static 'images/roomImg/4.png' %}" alt="Image 4" />
+            </a>
+            <a href="{% static 'images/roomImg/5.png' %}" data-fancybox="gallery" data-caption="Image 5">
+                <img src="{% static 'images/roomImg/5.png' %}" alt="Image 5" />
+            </a>
+            <a href="{% static 'images/roomImg/6.png' %}" data-fancybox="gallery" data-caption="Image 6">
+                <img src="{% static 'images/roomImg/6.png' %}" alt="Image 6" />
+            </a>
+            <a href="{% static 'images/roomImg/7.png' %}" data-fancybox="gallery" data-caption="Image 7">
+                <img src="{% static 'images/roomImg/7.png' %}" alt="Image 7" />
+            </a>
+            <a href="{% static 'images/roomImg/8.png' %}" data-fancybox="gallery" data-caption="Image 8">
+                <img src="{% static 'images/roomImg/8.png' %}" alt="Image 8" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        // Инициализация Fancybox
+        Fancybox.bind('[data-fancybox="gallery"]', {});
+
+        // Логика слайд-шоу
+        const slides = document.querySelectorAll('.gallery a');
+        let currentSlide = 0;
+        const slideInterval = 4000; // 4 секунды на каждое изображение
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, slideInterval);
+    </script>
+</body>
+</html>
