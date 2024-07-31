@@ -75,6 +75,7 @@
             visibility: hidden; /* Делаем текст невидимым по умолчанию */
             transform: translateY(20px); /* Начальная позиция текста */
             transition: opacity 0.3s, visibility 0.3s, transform 0.3s; /* Плавные переходы */
+            text-align: center;
         }
 
         .image:hover p {
@@ -89,6 +90,7 @@
             transition: transform 0.3s;
             border: 0px;
         }
+       
 
         .image img:hover {
             transform: scale(1.1);
@@ -123,19 +125,19 @@
              <a href="{% url 'django.contrib.flatpages.views.flatpage' 'fractalRoom/' %}">
             <div class="image">
                 <img src="{% static 'images/Haunting on the Metaverse/fractal.gif' %}" alt="Fractal Room" >
-                <p>fractal room (gif)</p>
+                <p>fractal room</p>
             </div>
              </a>
             <a href="{% url 'django.contrib.flatpages.views.flatpage' 'roomweb1.0/' %}">
                 <div class="image">
                     <img src="{% static 'images/Haunting on the Metaverse/doll.jpg' %}" alt="Web 1.0 Room" >
-                    <p>web 1.0 room (3D model)</p>
+                    <p>web 1.0 room</p>
                 </div>
             </a>
             <a href="{% url 'django.contrib.flatpages.views.flatpage' 'glitchRoom/' %}">
                 <div class="image">
                     <img src="{% static 'images/Haunting on the Metaverse/image.png' %}" alt="Glitch Room" >
-                    <p>glitch room (с глитч эффектом на картине)</p>
+                    <p>glitch room</p>
                 </div>
             </a>
         </div>
