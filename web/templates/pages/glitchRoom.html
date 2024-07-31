@@ -8,29 +8,38 @@
     <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/glitch1.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Web 1.0</title>
+    <title>Glitch Room</title>
     <!-- Подключение стилей Fancybox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <style>
         .gallery {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            position: relative; /* Set the container as relative for absolute positioning */
+            width: 100%; /* Set the desired width */
+            height: 300px; /* Set a fixed height for the collage */
+            margin: 0 auto; /* Center the gallery */
+            overflow: hidden; /* Hide any overflow */
+            border-radius: 10px; /* Optional: add a border-radius */
+            margin: auto;
         }
         .gallery a {
-            width: 200px;
-            height: auto;
+            position: absolute; /* Position each image absolutely */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Start with all images hidden */
+            transition: opacity 0.5s ease; /* Smooth transition */
+            display: flex;
+        }
+        .gallery a.active {
+            opacity: 1; /* Show the active image */
         }
         .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
+            width: auto;
+            height: 100%;
+            object-fit: cover; /* Cover the entire space */
+            border-radius: 0;
+            margin: auto;
         }
     </style>
 </head>
@@ -53,7 +62,7 @@
 
     <!-- Галерея изображений -->
     <div class="gallery">
-        <a href="{% static 'images/glitch/1.png' %}" data-fancybox="gallery" data-caption="Image 1">
+        <a href="{% static 'images/glitch/1.png' %}" data-fancybox="gallery" data-caption="Image 1" class="active">
             <img src="{% static 'images/glitch/1.png' %}" alt="Image 1">
         </a>
         <a href="{% static 'images/glitch/2.png' %}" data-fancybox="gallery" data-caption="Image 2">
@@ -74,6 +83,21 @@
         Fancybox.bind('[data-fancybox="gallery"]', {
             Thumbs: false, // Отключение миниатюр
             Toolbar: true, // Включение панели инструментов
+        });
+
+        // JavaScript to cycle through images
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.gallery a');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            // Change images every 3 seconds
+            setInterval(showNextImage, 3000);
         });
     </script>
 </body>
